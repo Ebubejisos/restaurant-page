@@ -1,0 +1,86 @@
+@import '_coolColors';
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('../fonts/Tillana-Regular.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url('../images/stones-g6116d4560_1280.jpg');
+  color: $white;
+  font-size: 18px;
+}
+@mixin flex($direction,$gap){
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+header{
+  padding-left: 15px;
+  padding-top: 15px;
+  background-color: $tile;
+  @include flex(column,30px);
+  div{
+    display: flex;
+    gap: 70px;
+    align-items: center;
+    text-transform: capitalize;
+  }
+  h1{
+    font-size: 2.5rem;
+  }
+  img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+  }
+}
+nav > div{
+  @include flex(row,2px);
+  justify-content: center;
+  button{
+    font-size: 2.5vw;
+    padding: 5px;
+    background-color: inherit;
+    border: none;
+    color: $black;
+    &:hover{
+      background-color: $blue;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+}
+
+article{
+  min-height: 500px;
+  background-color: hwb(333 50% 6% / 0.3);
+}
+footer{
+  background-color:#393f4d9b ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding: 16px;
+  img{
+    margin-left: 5px;
+    background-color: inherit;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Utility class */
+.btn-border{
+  border: 1px solid white;
+  border-bottom: none;
+}
